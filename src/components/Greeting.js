@@ -1,47 +1,32 @@
+import React from "react";
 import '../App.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { getGreetings } from '../redux/greetings/greetings'
 // import { getArts } from '../redux/art/art';
 
 const Greeting = () => {
-  const greetList = [];
-    const { greetings } = this.props;
-    greetings.map((greet) => {
-      greetList.push(greet.greeting);
-    })
-    const randomGreet = greetList[Math.floor(Math.random()*greetList.length)];
-    return (
-      <React.Fragment>
-        Greeting: {this.props.greeting}
-        <button className="getGreetingsBtn" onClick={() => this.props.getGreetings()}>Click here to greet</button>
-        <br />
-        <div>{ randomGreet }</div>
-      </React.Fragment>
-    );
-};
-
-/*
-const Art = () => {
-  const artsArr = [];
-
+  let greetList = [];
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (artsArr.length === 0) {
-      dispatch(getArts());
-    }
+    dispatch(getGreetings());
   }, []);
 
-  const artsList = useSelector((state) => state.artsReducer);
-  const arts = artsList;
-  if (arts[0] === undefined) {
-    return (
+  const greetingsList = useSelector((state) => state.greetingsReducer);
+  greetList = greetingsList;
+  console.log('greetingList', greetingsList);
+  const lista = greetList.greetings;
+  console.log('Lista', lista);
+  let randomGreet = lista[Math.floor(Math.random()*lista.length)];
+  console.log('random', randomGreet);
+  if (lista[0] === undefined){
+      return (
       <div className="container p-4">
         <div className="row">
           <div className="col-sm-4" />
           <div className="col-sm-8">
-            <h1>
+            <h1 className="text-white">
               Loading
             </h1>
           </div>
@@ -49,50 +34,18 @@ const Art = () => {
       </div>
     );
   }
-  return (
-    <div>
-      <div>
-        <div>
-          <div className="row">
-            <div className="headbanner pt-1">
-            </div>
-            <div className="col p-5 firstCont bluborder leafcont" />
-            <div className="col p-5 firstCont bluborder text-white">
-              <h1>Art</h1>
-              {artsList.length}
-              Elements
-            </div>
-          </div>
-          <div className="row">
-            { arts.length !== 0
-              ? arts.map((art) => (
-                <ArtList
-                  key={art.id}
-                  name={art.name['name-USen']}
-                  id={art.id}
-                  image={art.image_uri}
-                  buyPrice={art['buy-price']}
-                  sellPrice={art['sell-price']}
-                />
-              ))
-              : (
-                <ArtList
-                  key="key"
-                  name="name"
-                  id="id"
-                  phrase="bday"
-                  image="icon"
-                  value="value"
-                />
-              )}
-          </div>
-        </div>
+
+    return (
+    <div className="card pt-5 mt-5">
+      <div className="card-body text-center">
+        <h1>
+          Greeting:
+          {randomGreet}
+        </h1>
+        <button type="button" className="btn btn-primary" onClick={() => dispatch(getGreetings())}> Click me to say Hi! </button>
       </div>
     </div>
-  );
+    );
 };
-
-export default Art;
-*/
 
 export default Greeting;

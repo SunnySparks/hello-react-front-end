@@ -4,12 +4,14 @@ const GET_GREETINGS_REQUEST = 'GET_GREETINGS_REQUEST';
 const GET_GREETINGS_SUCCESS = 'GET_GREETINGS_SUCCESS';
 // const API_URL = 'https://acnhapi.com/v1a/art/';
 
-const initialState = [];
+const initialState = {
+  greetings: [],
+};
 
-const getGreetings = () => {
+export const getGreetings = () => {
  return dispatch => {
    dispatch({ type: GET_GREETINGS_REQUEST });
-   return fetch(`v1/greetings.json`)
+   return fetch(`http://localhost:3001/v1/greetings.json`)
    .then(response => response.json())
    .then(json => dispatch(getGreetingsSuccess(json)))
    .catch(error => console.log(error));
@@ -26,7 +28,11 @@ export function getGreetingsSuccess(json){
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_GREETINGS_SUCCESS':
-      return { greetings: action.json.greetings };
+    const greets = [];
+    action.json.greetings.forEach(element => {
+      greets.push(element.greeting)
+    });
+      return { greetings: greets };
   }
   return state;
 }

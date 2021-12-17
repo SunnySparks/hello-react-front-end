@@ -1,19 +1,24 @@
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import './App.css';
+import React from "react"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Greeting from "./components/Greeting";
+import store from './redux/configureStore';
+import { Provider } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Learn React
-        </p>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render () {
+    return (
+      <Provider store={store}>
+        <React.Fragment>
+          <Router>
+          <Routes>
+            <Route path="/" element= { ("Home!") }/>
+            <Route path="/greeting" element={ <Greeting/> } />
+          </Routes>
+        </Router>
+        </React.Fragment>
+      </Provider>
+    );
+  }
 }
 
-export default App;
+export default App
