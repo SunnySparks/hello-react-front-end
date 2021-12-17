@@ -39,7 +39,9 @@ const Greeting = () => {
     <div className="card pt-5 mt-5">
       <div className="card-body text-center">
         <h1>
-          Greeting:
+          Welcome.
+        </h1>
+        <h1 className="text-white">
           {randomGreet}
         </h1>
         <button type="button" className="btn btn-primary" onClick={() => dispatch(getGreetings())}> Click me to say Hi! </button>
