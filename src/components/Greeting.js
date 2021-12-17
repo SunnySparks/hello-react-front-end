@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React from "react";
 import '../App.css';
 import { useEffect } from 'react';
@@ -15,19 +17,16 @@ const Greeting = () => {
 
   const greetingsList = useSelector((state) => state.greetingsReducer);
   greetList = greetingsList;
-  console.log('greetingList', greetingsList);
   const lista = greetList.greetings;
-  console.log('Lista', lista);
   let randomGreet = lista[Math.floor(Math.random()*lista.length)];
-  console.log('random', randomGreet);
   if (lista[0] === undefined){
       return (
       <div className="container p-4">
         <div className="row">
           <div className="col-sm-4" />
           <div className="col-sm-8">
-            <h1 className="text-white">
-              Loading
+            <h1>
+              Loading greetings...
             </h1>
           </div>
         </div>
@@ -36,15 +35,15 @@ const Greeting = () => {
   }
 
     return (
-    <div className="card pt-5 mt-5">
-      <div className="card-body text-center">
+    <div className="pt-5 mt-5">
+      <div className="text-center">
         <h1>
-          Welcome.
+          Greetings page
         </h1>
-        <h1 className="text-white">
+        <h1>
           {randomGreet}
         </h1>
-        <button type="button" className="btn btn-primary" onClick={() => dispatch(getGreetings())}> Click me to say Hi! </button>
+        <button type="button" className="btn btn-outline-danger btn-lg" onClick={() => dispatch(getGreetings())}> Click me to say Hi! </button>
       </div>
     </div>
     );
