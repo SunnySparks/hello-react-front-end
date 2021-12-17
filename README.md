@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Hello-React-Front-End
 
-## Available Scripts
+> A Web Application that displays random greetings pulled from API data
 
-In the project directory, you can run:
 
-### `npm start`
+![screenshot](./frontend.jpeg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Use web UI for displaying 5 different greetings at the click of a button
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Built With
 
-### `npm test`
+- React
+- Redux
+- Bootstrap
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Backend API
+[Hello-Rails-Back-End](https://github.com/SunnySparks/hello-rails-back-end)
+## Access Endpoint for API
+GET \
+You can fetch the greetings \
+`http://localhost:3001/v1/greetings`
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To get a local copy up and running follow these simple example steps.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
+ A modern web browser (Chrome, Firefox, Safari, Microsoft Edge)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Usage
+ Clone the project by typing in your terminal `$ git clone https://github.com/SunnySparks/hello-react-front-end.git`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ Change directory `$ cd` into the just created from the project.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ Run `$ npm install` to install dependencies.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ To open the server run `$ npm run start`. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Access the website for greetings by typing in your browser `http://localhost:3000/greeting` \
+then click the button to get the greetings
+ 
+## Run tests
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ Run `$ npx eslint .` for javascript linters.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ Run `$ npx stylelint "**/*.{css,scss}"` for style linters.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+👤 **Sunny Díaz**
 
-### Making a Progressive Web App
+- GitHub: [@SunnySparks](https://github.com/SunnySparks)
+- Twitter: [@JosfranT6](https://twitter.com/JosFranT6)
+- Instagram: [@webdev.sunnydiaz](https://www.instagram.com/webdev.sunnydiaz/)
+- Portfolio: [sunnydiaz.com](https://sunnydiaz.com/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/jose-f-silva/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Contributions, issues, and feature requests are welcome!
 
-### Advanced Configuration
+Feel free to check the [issues page](https://github.com/SunnySparks/hello-rails-back-end/issues).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Show your support
 
-### Deployment
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Acknowledgments
 
-### `npm run build` fails to minify
+- JavaScript and React best practices
+- API consumption
+- Redux-Thunk utilization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
