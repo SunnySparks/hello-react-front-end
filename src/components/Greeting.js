@@ -24,7 +24,7 @@ const Greeting = () => {
           <div className="col-sm-4" />
           <div className="col-sm-8">
             <h1>
-              Loading greetings...
+              Now Loading greetings...
             </h1>
           </div>
         </div>
